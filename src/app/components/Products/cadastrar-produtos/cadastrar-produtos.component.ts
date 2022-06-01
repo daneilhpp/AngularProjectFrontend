@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrarProdutosComponent implements OnInit {
 
+  nome: string = '';
+  validade: string = '';
+  preco: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  salvarProduto(): void{
+    console.log('Nome: ',this.nome);
+    console.log('Validade: ',this.validade);
+    console.log('Preco: ',this.preco);
+    alert('Salvo com sucesso.');
   }
 
 }
