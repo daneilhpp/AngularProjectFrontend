@@ -16,11 +16,10 @@ export class HomeComponent implements OnInit {
   dataValidade = '2021-12-31'
 
   listaProdutos: any[]=[
-    {nome: 'Curso Ionic', precoProduto: 400.44, validade: '2021-09-05', id:1, promocao: true},
-    {nome: 'Curso Java', precoProduto: 120.20, validade: '2022-06-01', id:2},
-    {nome: 'Curso Java Avançado', precoProduto: 240.40, validade: '2022-12-30', id:3},
-    {nome: 'Curso C#', precoProduto: 160.00, validade: '2022-08-02', id:4, promocao: true},
-    {nome: 'Curso Python', precoProduto: 60.66, validade: '2021-12-25', id:5}
+    {nome: 'Curso Java', precoProduto: 120.20, validade: '2022-06-01', id:1},
+    {nome: 'Curso Java Avançado', precoProduto: 240.40, validade: '2022-12-30', id:2},
+    {nome: 'Curso C#', precoProduto: 160.00, validade: '2022-08-02', id:3, promocao: true},
+    {nome: 'Curso Python', precoProduto: 60.66, validade: '2021-12-25', id:4}
   ];
 
   constructor() {

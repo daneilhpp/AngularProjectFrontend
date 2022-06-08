@@ -2,57 +2,61 @@
 
 <h4 class="text-danger">{{ anuncio }}</h4>
 
-<div class="card" style="width: 18rem;">
-  <div class="row">
-    <div class="col">
+<div class="row">
+  <div class="col">
+    <app-card-produto
+      [foto] = "foto"
+      [nomeProduto] = "nomeProduto"
+      [promocao] = "promocao"
+      [idProduto] = "idProduto"
+      [dataValidade] = "dataValidade"
+      [precoProduto] = "precoProduto"
+    ></app-card-produto>
+  </div>
 
-      <img [src]="foto" class="card-img-top" alt="...">
+  <div class="col">
+    <app-card-produto
+      foto = "https://dkrn4sk0rn31v.cloudfront.net/uploads/2019/07/19173134/IONIC.png"
+      nomeProduto = "Curso Ionic"
+      [promocao] = "false"
+      [idProduto] = "15"
+      dataValidade = "2021-12-31"
+      [precoProduto] = "543.00"
+    ></app-card-produto>
+  </div>
 
+  <div class="col">
+    <div class="card mt-3" style="width: 40rem;">
       <div class="card-body">
-        <h5 class="card-title">
-          {{nomeProduto | uppercase}}
-          <span *ngIf="promocao;else elseBlock" class="badge badge-success">Promoção</span>
-          <ng-template #elseBlock>
-            <span class="badge badge-primary">Aproveite</span>
-          </ng-template>
-        </h5>
-        <p class="card-text"><b>Identificação:</b>   {{idProduto | number:'2.0-0'}} <br>
-          <b>Validade:</b> {{dataValidade | date:'shortDate'}}
-        </p>
-        <a href="#" class="btn btn-primary float float-right">{{precoProduto | currency:'BRL'}}</a>
-      </div>
-    </div>
+        <h5 class="card-title">Outros Cursos</h5><br>
+        <tr *ngFor = "let prod of listaProdutos">
 
+            <div class="row">
+              <div class="col">
+                <td><b>Id: </b>{{prod.id}}</td>
+              </div>
+              <div class="col">
+                <td><b>Nome: </b>{{prod.nome}}</td>
+              </div>
+              <div class="col">
+                <td><b>Validade: </b>{{prod.validade | date: "shortDate"}}</td>
+              </div>
+              <div class="col">
+                <td><b>Preço: </b>{{prod.precoProduto | currency: "BRL"}}</td>
+              </div>
+            </div>
+            <br>
+        </tr>
+      </div>
   </div>
 </div>
 
-<div class="card mt-3" style="width: 40rem;">
-  <div class="card-body">
-    <h5 class="card-title">Outros Cursos</h5><br>
-    <tr *ngFor = "let prod of listaProdutos">
-
-        <div class="row">
-          <div class="col">
-            <td><b>Id: </b>{{prod.id}}</td>
-          </div>
-          <div class="col">
-            <td><b>Nome: </b>{{prod.nome}}</td>
-          </div>
-          <div class="col">
-            <td><b>Validade: </b>{{prod.validade | date: "shortDate"}}</td>
-          </div>
-          <div class="col">
-            <td><b>Preço: </b>{{prod.precoProduto | currency: "BRL"}}</td>
-          </div>
-        </div>
 
 
 
 
-        <br>
 
-    </tr>
-  </div>
+
 
 <div class="card-body">
 
